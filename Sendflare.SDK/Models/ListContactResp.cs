@@ -8,8 +8,8 @@ namespace Sendflare.SDK.Models
     /// </summary>
     public class ListContactResp : PaginateResp
     {
-        [JsonPropertyName("data")]
-        public List<ContactItem> Data { get; set; }
+        [JsonPropertyName("list")]
+        public List<Map<String, String>> List { get; set; }
     }
 }
 
