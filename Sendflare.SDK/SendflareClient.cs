@@ -13,7 +13,7 @@ namespace Sendflare.SDK
     /// </summary>
     public class SendflareClient : IDisposable
     {
-        private const string BaseUrl = "https://api.sendflare.io";
+        private const string BaseUrl = "https://api.sendflare.com";
         private const int RequestTimeout = 10; // seconds
 
         private readonly string _token;

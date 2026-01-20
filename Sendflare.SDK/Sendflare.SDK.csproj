@@ -7,7 +7,7 @@
     <Authors>Sendflare Team</Authors>
     <Company>Sendflare</Company>
     <Description>The SDK for sendflare service written in C#</Description>
-    <PackageProjectUrl>https://docs.sendflare.io</PackageProjectUrl>
+    <PackageProjectUrl>https://docs.sendflare.com</PackageProjectUrl>
     <RepositoryUrl>https://github.com/sendflare/sendflare-sdk-csharp</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageTags>sendflare;email;sdk;api</PackageTags>
