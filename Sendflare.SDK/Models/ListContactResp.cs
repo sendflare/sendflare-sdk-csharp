@@ -9,7 +9,7 @@ namespace Sendflare.SDK.Models
     public class ListContactResp : PaginateResp
     {
         [JsonPropertyName("data")]
-        public Dictionary<string, string> List { get; set; }
+        public List<Dictionary<string, string>> List { get; set; }
     }
 }
 

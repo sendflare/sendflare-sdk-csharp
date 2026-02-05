@@ -5,7 +5,7 @@ The SDK for sendflare service written in C#.
 ## Requirements
 
 - .NET Standard 2.0 or higher
-- .NET Framework 4.6.1+ / .NET Core 2.0+ / .NET 5.0+
+- .NET Framework 4.6.1+ / .NET Core 2.0+ / .NET 8.0+
 
 ## Installation
 
