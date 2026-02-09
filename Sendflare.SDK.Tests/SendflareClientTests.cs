@@ -15,13 +15,13 @@ namespace Sendflare.SDK.Tests
         public SendflareClientTests(ITestOutputHelper output)
         {
             _output = output;
-            _client = new SendflareClient("this-is-my-token");
+            _client = new SendflareClient("you-token");
         }
 
         [Fact]
         public void TestNewSendflareClient()
         {
-            var client = new SendflareClient("this-is-my-token");
+            var client = new SendflareClient("you-token");
             Assert.NotNull(client);
         }
 
@@ -66,7 +66,7 @@ namespace Sendflare.SDK.Tests
             try
             {
                 var resp = await _client.GetContactListAsync(req);
-                _output.WriteLine($"Response: TotalCount={resp.TotalCount}");
+                _output.WriteLine($"Response: TotalCount={resp.Data?.TotalCount ?? 0}");
             }
             catch (Exception e)
             {

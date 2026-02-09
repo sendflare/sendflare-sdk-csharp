@@ -24,25 +24,26 @@ namespace Sendflare.SDK.Models
         [JsonPropertyName("ts")]
         public long Ts { get; set; }
 
-        // PaginateResp fields
-        [JsonPropertyName("page")]
-        public int Page { get; set; }
-
-        [JsonPropertyName("pageSize")]
-        public int PageSize { get; set; }
-
-        [JsonPropertyName("totalCount")]
-        public long TotalCount { get; set; }
-
-        // Data wrapper with list
+        // Data wrapper with pagination and list
         [JsonPropertyName("data")]
         public ContactListData Data { get; set; }
 
         /// <summary>
-        /// Nested data structure containing the contact list
+        /// Nested data structure containing pagination and contact list
         /// </summary>
         public class ContactListData
         {
+            // PaginateResp fields
+            [JsonPropertyName("page")]
+            public int Page { get; set; }
+
+            [JsonPropertyName("pageSize")]
+            public int PageSize { get; set; }
+
+            [JsonPropertyName("totalCount")]
+            public long TotalCount { get; set; }
+
+            // Contact list
             [JsonPropertyName("list")]
             public List<Dictionary<string, string>> List { get; set; }
         }
