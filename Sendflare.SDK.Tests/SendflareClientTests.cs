@@ -15,13 +15,13 @@ namespace Sendflare.SDK.Tests
         public SendflareClientTests(ITestOutputHelper output)
         {
             _output = output;
-            _client = new SendflareClient("you-token");
+            _client = new SendflareClient("your-token");
         }
 
         [Fact]
         public void TestNewSendflareClient()
         {
-            var client = new SendflareClient("you-token");
+            var client = new SendflareClient("your-token");
             Assert.NotNull(client);
         }
 
@@ -33,7 +33,9 @@ namespace Sendflare.SDK.Tests
                 From = "test@example.com",
                 To = "to@example.com",
                 Subject = "test",
-                Body = "test email"
+                Body = "test email",
+                CC = new List<string> { "cc@example.com" },
+                BCC = new List<string> { "bcc@example.com" }
             };
 
             _output.WriteLine($"Request: {req.From} -> {req.To}");

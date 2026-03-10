@@ -18,6 +18,12 @@ namespace Sendflare.SDK.Models
 
         [JsonPropertyName("body")]
         public string Body { get; set; }
+
+        [JsonPropertyName("cc")]
+        public List<string> CC { get; set; }
+
+        [JsonPropertyName("bcc")]
+        public List<string> BCC { get; set; }
     }
 }
 
