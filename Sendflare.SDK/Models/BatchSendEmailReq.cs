@@ -3,15 +3,15 @@ using System.Text.Json.Serialization;
 namespace Sendflare.SDK.Models
 {
     /// <summary>
-    /// Send Email request entity
+    /// Batch Send Email request entity
     /// </summary>
-    public class SendEmailReq
+    public class BatchSendEmailReq
     {
         [JsonPropertyName("from")]
         public string From { get; set; }
 
         [JsonPropertyName("to")]
-        public string To { get; set; }
+        public List<string> To { get; set; }
 
         [JsonPropertyName("subject")]
         public string Subject { get; set; }

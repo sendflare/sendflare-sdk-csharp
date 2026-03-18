@@ -52,6 +52,17 @@ namespace Sendflare.SDK
         }
 
         /// <summary>
+        /// Send a batch of emails
+        /// </summary>
+        /// <param name="req">Batch send email request</param>
+        /// <returns>Batch send email response</returns>
+        public async Task<BatchSendEmailResp> BatchSendEmailAsync(BatchSendEmailReq req)
+        {
+            var path = "/v1/batchSend";
+            return await MakeRequestAsync<BatchSendEmailResp>(HttpMethod.Post, path, req);
+        }
+
+        /// <summary>
         /// Get contact list
         /// </summary>
         /// <param name="req">List contact request</param>

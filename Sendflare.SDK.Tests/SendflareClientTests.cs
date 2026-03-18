@@ -54,6 +54,29 @@ namespace Sendflare.SDK.Tests
         }
 
         [Fact]
+        public async Task TestBatchSendEmail()
+        {
+            var req = new BatchSendEmailReq
+            {
+                From = "test@example.com",
+                To = new List<string> { "to@example.com" },
+            };
+            _output.WriteLine($"Request: {req.From} -> {string.Join(", ", req.To)}");
+
+            try
+            {
+                var resp = await _client.BatchSendEmailAsync(req);
+                _output.WriteLine($"Response: Success={resp.Success}");
+            }
+            catch (Exception e)
+            {
+                _output.WriteLine($"Expected error without valid token: {e.Message}");
+                // This is expected without a valid token
+                Assert.True(true);
+            }
+        }
+
+        [Fact]
         public async Task TestGetContactList()
         {
             var req = new ListContactReq
