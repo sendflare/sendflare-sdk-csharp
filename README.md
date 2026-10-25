@@ -329,3 +329,21 @@ For more information, visit: [https://docs.sendflare.com](https://docs.sendflare
 
 [MIT](./LICENSE)
 
+
+## Attachments
+
+Single and batch email requests support an optional `attachments` list. Each attachment has `filename` and `content`, plus optional `contentType`, `contentId`, and `disposition`. Omit `disposition` for a normal attachment, or use `inline` and reference `contentId` from the HTML body (for example, `<img src="cid:logo">`).
+
+```csharp
+using Sendflare.SDK.Models;
+using System.Collections.Generic;
+using System.Text;
+
+req.Attachments = new List<SendAttachment> {
+    new SendAttachment { Filename = "report.txt", Content = Encoding.UTF8.GetBytes("hello") },
+    new SendAttachment { Filename = "logo.png", Content = imageBytes,
+        ContentType = "image/png", ContentId = "logo", Disposition = "inline" }
+};
+```
+
+`req` can be a `SendEmailReq` or `BatchSendEmailReq`. `Content` accepts raw bytes; `System.Text.Json` encodes them as Base64.

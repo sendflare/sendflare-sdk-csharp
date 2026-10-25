@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
 namespace Sendflare.SDK.Models
@@ -24,6 +25,10 @@ namespace Sendflare.SDK.Models
 
         [JsonPropertyName("bcc")]
         public List<string> BCC { get; set; }
+
+        [JsonPropertyName("attachments")]
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public List<SendAttachment> Attachments { get; set; }
 
         [JsonPropertyName("replyTo")]
         public List<string> ReplyTo { get; set; }
